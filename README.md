@@ -1,10 +1,10 @@
-# Simple placeholder CRUD
+# Link development workshop 2022
 
-An application used to fetch, add, edit delete from [http://jsonplaceholder.typicode.com/](http://jsonplaceholder.typicode.com/), built with React, Redux-toolkit, TypeScript, react-hook-forms, mui, and emotion.
+Building a UI of a business website built with React, Redux-toolkit, TypeScript, react-hook-forms, mui, and emotion.
 
 # Project Status
 
-This project is fulfilled as per the task guid; however, I faced some issues with the returned updated or deleted requests, so I kept there logic commented this could be found on UserForm page.
+This project is fulfilled as per the task guid.
 
 # Linting and guards
 

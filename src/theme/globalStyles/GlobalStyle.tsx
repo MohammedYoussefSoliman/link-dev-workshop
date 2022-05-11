@@ -1,7 +1,9 @@
 import React from "react";
-import { Global, css } from "@emotion/react";
+import { Global, css, useTheme } from "@emotion/react";
 
 export default function GlobalStyles() {
+  const theme = useTheme();
+  const { font } = theme as any;
   return (
     <Global
       styles={css`
@@ -31,15 +33,10 @@ export default function GlobalStyles() {
         }
 
         body {
+          font-family: ${font};
           width: 100%;
           white-space: normal;
           background-color: #ffffff;
-        }
-
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
         }
       `}
     />
