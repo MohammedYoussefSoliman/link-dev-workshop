@@ -15,6 +15,7 @@ export const HeaderWrapper = styled.div`
   width: 100%;
   height: 80px;
   margin-bottom: 32px;
+  background: ${({ theme }) => theme.colors.primary[200]};
   padding: 1rem;
   p {
     margin: 0;

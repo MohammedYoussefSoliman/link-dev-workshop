@@ -3,7 +3,7 @@ import { Global, css, useTheme } from "@emotion/react";
 
 export default function GlobalStyles() {
   const theme = useTheme();
-  const { font } = theme as any;
+  const { font } = theme;
   return (
     <Global
       styles={css`
