@@ -1,5 +1,10 @@
 import React from "react";
+import { Wrapper, Background } from "./styles";
 
 export default function Home() {
-  return <div>This is home</div>;
+  return (
+    <Wrapper>
+      <Background />
+    </Wrapper>
+  );
 }

@@ -12,6 +12,7 @@ export type FlexPropsType = {
   flex?: CSS.Property.Flex;
   fullWidth?: boolean;
   fullHeight?: boolean;
+  className?: string;
 };
 
 export type StyledFlexWrapper = Omit<FlexPropsType, "children">;

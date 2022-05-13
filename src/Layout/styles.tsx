@@ -11,12 +11,14 @@ const LayoutWrapper = styled.div`
 `;
 
 export const HeaderWrapper = styled.div`
+  position: fixed;
   label: app-header;
   width: 100%;
-  height: 80px;
+  height: 125px;
   margin-bottom: 32px;
-  background: ${({ theme }) => theme.colors.primary[200]};
-  padding: 1rem;
+  background: transparent;
+  z-index: 1000;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.white};
   p {
     margin: 0;
   }
