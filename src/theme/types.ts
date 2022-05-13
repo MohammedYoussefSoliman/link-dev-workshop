@@ -25,6 +25,7 @@ type ColorType = {
 export type ColorsType = {
   primary: ColorType;
   secondary: ColorType;
+  error: ColorType;
   white: string;
 };
 

@@ -11,3 +11,4 @@ export { default as EnergyIcon } from "./EnergyIcon";
 export { default as HeartbeatIcon } from "./HeartbeatIcon";
 export { default as HeartIcon } from "./HeartIcon";
 export { default as ShareIcon } from "./ShareIcon";
+export { default as ChevronIcon } from "./ChevronIcon";

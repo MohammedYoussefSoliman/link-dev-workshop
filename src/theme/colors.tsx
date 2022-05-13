@@ -12,6 +12,11 @@ const colors = {
     300: "#B27208",
   },
   white: "#FFFFFF",
+  error: {
+    100: tinyColor("#f5251a").lighten(15).toString(),
+    200: tinyColor("#f5251a").lighten(10).toString(),
+    300: "#f5251a",
+  },
 };
 
 export default colors;
