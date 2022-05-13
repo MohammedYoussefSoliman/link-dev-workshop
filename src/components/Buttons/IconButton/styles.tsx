@@ -8,6 +8,7 @@ const StyledIconButton = styled("button")<StyledIconButtonPropsType>`
   align-items: center;
   justify-content: center;
   outline: none;
+  cursor: pointer;
   ${({ color }) => resolveColorStyles(color)};
   ${({ size }) => mangeIconButtonSize(size || "md")};
   ${({ rounded }) =>

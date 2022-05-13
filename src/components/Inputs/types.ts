@@ -51,6 +51,7 @@ export interface SelectProps
   error?: string;
   rounded?: boolean;
   withBorder?: boolean;
+  background?: string;
 }
 
 export interface CommonInputProps {

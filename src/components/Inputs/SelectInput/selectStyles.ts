@@ -5,34 +5,40 @@ type SelectStyleSettingsType = {
   error?: boolean;
   rounded?: boolean;
   withBorder?: boolean;
+  background?: string;
 };
 
 const useSelectStyles = ({
   error,
   rounded,
   withBorder,
+  background,
 }: SelectStyleSettingsType) => {
   const theme = useTheme();
   return {
     control: (base: any) => ({
       ...base,
-      flexDirection: "row-reverse",
       borderRadius: rounded ? "21px" : "none",
       border: withBorder ? `1px solid ${theme.colors.white}` : "none",
       borderColor: error ? theme.colors.error[300] : theme.colors.primary[200],
-      padding: "8px 32px",
+      background: background || theme.colors.primary[300],
       height: "42px",
       boxShadow: "none",
       "&:hover": {
-        border: `1px solid ${theme.colors.primary[100]}`,
+        border: withBorder ? `1px solid ${theme.colors.primary[100]}` : "none",
       },
       "&:focus-within": {
         border: `2px solid ${theme.colors.primary[200]}`,
       },
     }),
+    menu: (base: any) => ({
+      ...base,
+      borderRadius: 0,
+      background: theme.colors.primary[100],
+    }),
     option: (base: any, state: any) => ({
       ...base,
-      padding: "1rem",
+      padding: "0.5rem",
       height: "100%",
       background: `${
         state.isSelected
@@ -47,6 +53,10 @@ const useSelectStyles = ({
       },
       "&:hover": {
         background: theme.colors.primary[300],
+        color: `${state.isSelected && theme.colors.white}`,
+        p: {
+          color: `${state.isSelected && theme.colors.white}`,
+        },
       },
     }),
   };

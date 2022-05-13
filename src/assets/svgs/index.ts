@@ -12,3 +12,4 @@ export { default as HeartbeatIcon } from "./HeartbeatIcon";
 export { default as HeartIcon } from "./HeartIcon";
 export { default as ShareIcon } from "./ShareIcon";
 export { default as ChevronIcon } from "./ChevronIcon";
+export { default as TimesIcon } from "./TimesIcon";

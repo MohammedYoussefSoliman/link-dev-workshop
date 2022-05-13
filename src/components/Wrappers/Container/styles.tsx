@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
-import devices from "helpers/devices";
+import devices from "theme/devices";
 
 type WrapperProps = {
   variants: {

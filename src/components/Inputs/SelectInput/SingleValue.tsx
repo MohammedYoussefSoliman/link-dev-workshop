@@ -11,7 +11,7 @@ export default function SingleValue({
 
   return (
     <components.SingleValue {...props}>
-      <Typography.P2 text={children as string} color={theme.colors.white} />
+      <Typography.P1 text={children as string} color={theme.colors.white} />
     </components.SingleValue>
   );
 }

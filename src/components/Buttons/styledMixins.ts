@@ -13,15 +13,16 @@ export const resolveColorStyles = (
   let borderColor: string;
 
   if (isLightColor) {
-    hoverColor = tinyColor.darken(5).setAlpha(0.2).toString();
+    hoverColor = tinyColor.darken(5).setAlpha(0.1).toString();
     borderColor = tinyColor.darken(5).toString();
   } else {
-    hoverColor = tinyColor.lighten(5).setAlpha(0.2).toString();
+    hoverColor = tinyColor.lighten(5).setAlpha(0.1).toString();
     borderColor = tinyColor.lighten(5).toString();
   }
 
   return css`
-    border-color: ${withBorder ? borderColor : "none"};
+    background: transparent;
+    border: ${withBorder ? `1px solid ${borderColor}` : "none"};
     &:hover {
       background: ${hoverColor};
     }
@@ -31,17 +32,17 @@ export const resolveColorStyles = (
 export const mangeIconButtonSize = (size: "sm" | "md" | "lg") => {
   const styledSize = {
     lg: css`
-      border-radius: 15px;
+      border-radius: 10px;
       width: 45px;
       height: 45px;
     `,
     md: css`
-      border-radius: 10px;
+      border-radius: 5px;
       width: 36px;
       height: 36px;
     `,
     sm: css`
-      border-radius: 7px;
+      border-radius: 3px;
       width: 30px;
       height: 30px;
     `,

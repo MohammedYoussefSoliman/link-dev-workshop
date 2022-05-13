@@ -1,4 +1,4 @@
-export type FontSize = {
+export type ResponsiveSettings = {
   xSmall: string;
   small?: string;
   medium?: string;
@@ -9,13 +9,13 @@ export type FontSize = {
 };
 
 type FontSizes = {
-  h1: FontSize;
-  h2: FontSize;
-  h3: FontSize;
-  h4: FontSize;
-  h5: FontSize;
-  p1: FontSize;
-  p2: FontSize;
+  h1: ResponsiveSettings;
+  h2: ResponsiveSettings;
+  h3: ResponsiveSettings;
+  h4: ResponsiveSettings;
+  h5: ResponsiveSettings;
+  p1: ResponsiveSettings;
+  p2: ResponsiveSettings;
 };
 
 type ColorType = {

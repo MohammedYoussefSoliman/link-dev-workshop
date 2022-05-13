@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   min-height: 100vh;
 `;
 
-export const Background = styled.div`
+export const HeroWrapper = styled.div`
   label: hero-bg;
   position: absolute;
   top: 0;
@@ -36,5 +36,10 @@ export const Background = styled.div`
     background-image: url(${SubtractionTwo});
     background-position: left;
     background-repeat: no-repeat;
+  }
+  .aside {
+    z-index: 10;
+    height: calc(100vh - 125px);
+    margin-top: 125px;
   }
 `;

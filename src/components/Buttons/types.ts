@@ -9,13 +9,14 @@ export type IconPropsType = {
 export type ButtonPropsType = {
   onClick?: () => void;
   children: React.ReactNode;
-  color: Property.Color;
+  color?: Property.Color;
   size?: "sm" | "md" | "lg";
   type?: "button" | "submit" | "reset";
   isLoading?: boolean;
   disabled?: boolean;
   className?: string;
   withBorder?: boolean;
+  rounded?: boolean;
 };
 
 export type StyledButtonPropsType = Omit<

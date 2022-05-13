@@ -1,5 +1,5 @@
 import { Property } from "csstype";
-import { FontSize } from "theme/types";
+import { ResponsiveSettings } from "theme/types";
 
 export type HoverType = {
   decoration?: Property.TextDecoration;
@@ -7,7 +7,7 @@ export type HoverType = {
   fontWeight?: Property.FontWeight;
 };
 
-export type FontSizeType = FontSize | Property.FontSize;
+export type FontSizeType = ResponsiveSettings | Property.FontSize;
 
 export type TextElementPropsType = {
   text: string | number;

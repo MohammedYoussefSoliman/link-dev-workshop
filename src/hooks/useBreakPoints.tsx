@@ -1,5 +1,5 @@
 import { useMediaQuery } from "@mui/material";
-import devices from "helpers/devices";
+import devices from "theme/devices";
 
 export default function useBreakpoints() {
   const hd = useMediaQuery(devices.hd);

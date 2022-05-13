@@ -19,11 +19,13 @@ export default function SelectInput({
   withBorder = true,
   onChange,
   value,
+  background = "transparent",
 }: SelectProps) {
   const styles = useSelectStyles({
     error: Boolean(error),
     rounded,
     withBorder,
+    background,
   });
 
   const { t } = useTranslation();

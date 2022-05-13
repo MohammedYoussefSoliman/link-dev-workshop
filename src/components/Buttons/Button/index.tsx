@@ -15,7 +15,7 @@ export default function Button({
   const theme = useTheme();
 
   return (
-    <StyledButton color={color} size={size} {...rest}>
+    <StyledButton color={color || theme.colors.white} size={size} {...rest}>
       {isLoading ? (
         <Flex gap="8px" align="center">
           <Spinner
