@@ -2,7 +2,7 @@ import React from "react";
 import Wrapper from "./styles";
 
 type AsidePropsType = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
 };
 

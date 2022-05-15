@@ -1,0 +1,60 @@
+{
+  "slides": [
+    {
+      "id": "slider--01",
+      "title": "your business expansion destination",
+      "label": "mission"
+    },
+    {
+      "id": "slider--02",
+      "title": "opposed to using 'Content here, content here",
+      "label": "mission"
+    },
+    {
+      "id": "slider--03",
+      "title": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration",
+      "label": "mission"
+    },
+    {
+      "id": "slider--04",
+      "title": "Contrary to popular belief, Lorem",
+      "label": "mission"
+    }
+  ],
+  "invest": {
+    "id": "invests--01",
+    "title": "Navigating the Opportunities of Africa’s Logistics Sector"
+  },
+  "sectors": [
+    {
+      "id": "sectors--01",
+      "title": "tourism",
+      "icon": "CaseIcon"
+    },
+    {
+      "id": "sectors--01",
+      "title": "agriculture",
+      "icon": "AgricultureIcon"
+    },
+    {
+      "id": "sectors--01",
+      "title": "real estate",
+      "icon": "HomeIcon"
+    },
+    {
+      "id": "sectors--01",
+      "title": "industrials",
+      "icon": "IndustryIcon"
+    },
+    {
+      "id": "sectors--05",
+      "title": "energy",
+      "icon": "EnergyIcon"
+    },
+    {
+      "id": "sectors--06",
+      "title": "healthcare",
+      "icon": "HeartbeatIcon"
+    }
+  ]
+}

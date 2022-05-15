@@ -1,23 +1,32 @@
+import React from "react";
 import { Flex } from "components/Wrappers";
 import Wrapper from "./styles";
 import Menu from "./Menu";
 import Logo from "./Logo";
 import Actions from "./Actions";
+import Settings from "./Settings";
 
-type HeaderProps = {
-  mode?: "page" | "menu";
-};
+export default function Header() {
+  const [scrolledStyle, setScrolledStyle] = React.useState<boolean>(false);
 
-export default function Header({ mode = "page" }: HeaderProps) {
+  const toggleScrolledStyle = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 10) {
+      setScrolledStyle(true);
+    } else if (scrolled <= 10) {
+      setScrolledStyle(false);
+    }
+  };
+
+  window.addEventListener("scroll", toggleScrolledStyle);
+
   return (
-    <Wrapper>
+    <Wrapper scrolled={scrolledStyle}>
       <Flex align="center" justify="flex-end" fullHeight fullWidth>
         <Logo />
-        <Flex className="header--actions" flex={1}>
-          ui settings
-        </Flex>
+        <Settings />
         <Actions />
-        {mode === "page" ? <Menu /> : <span>menu</span>}
+        <Menu />
       </Flex>
     </Wrapper>
   );

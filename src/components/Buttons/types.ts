@@ -48,7 +48,7 @@ export type NavigationButtonPropsType = {
   direction: "left" | "right";
   isLoading?: boolean;
   disabled?: boolean;
-  iconColor?: string;
+  iconColor?: Property.Color;
   iconSize?: number;
   size?: "sm" | "md" | "lg";
   className?: string;

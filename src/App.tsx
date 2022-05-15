@@ -6,7 +6,7 @@ import LoadingScreen from "components/LoadingScreen";
 import GlobalStyles from "theme/globalStyles/GlobalStyle";
 import FontsStyles from "theme/globalStyles/FontsSetup";
 import { creatRoutes } from "app/functions";
-import { Routes } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import routes from "app/routes";
 
 function App() {
@@ -16,7 +16,10 @@ function App() {
       <GlobalStyles />
       <Layout>
         <React.Suspense fallback={<LoadingScreen />}>
-          <Routes>{routes.map((route) => creatRoutes(route))}</Routes>
+          <Routes>
+            {routes.map((route) => creatRoutes(route))}
+            <Route path="*" element={<Navigate to="/404" replace />} />
+          </Routes>
         </React.Suspense>
       </Layout>
     </ThemeProvider>

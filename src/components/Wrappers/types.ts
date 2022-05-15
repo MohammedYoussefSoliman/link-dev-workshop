@@ -13,6 +13,7 @@ export type FlexPropsType = {
   fullWidth?: boolean;
   fullHeight?: boolean;
   className?: string;
+  as?: any;
 };
 
-export type StyledFlexWrapper = Omit<FlexPropsType, "children">;
+export type StyledFlexWrapper = Omit<FlexPropsType, "children" | "as">;

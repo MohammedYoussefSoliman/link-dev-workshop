@@ -1,5 +1,10 @@
+/* eslint-disable import/no-unresolved */
 import React from "react";
 import ReactDOM from "react-dom";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./Store";

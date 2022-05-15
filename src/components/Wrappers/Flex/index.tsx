@@ -4,11 +4,11 @@ import { FlexPropsType } from "../types";
 
 const Flex = React.forwardRef(
   (
-    { children, ...props }: FlexPropsType,
+    { children, as, ...props }: FlexPropsType,
     ref: React.ForwardedRef<HTMLDivElement>,
   ) => {
     return (
-      <Wrapper ref={ref} {...props}>
+      <Wrapper ref={ref} as={as} {...props}>
         {children}
       </Wrapper>
     );

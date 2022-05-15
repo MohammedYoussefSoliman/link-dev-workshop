@@ -7,6 +7,7 @@ const StyledCard = styled(Flex)`
   background: transparent;
   border: 1px solid ${({ theme }) => theme.colors.white};
   max-width: 140px;
+  height: 200px;
   .title {
     text-transform: uppercase;
   }

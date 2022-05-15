@@ -41,7 +41,7 @@ export default function Actions() {
       <Button rounded>
         <Typography.P2
           weight={300}
-          text="sign in"
+          text="signIn"
           color={theme.colors.white}
           capitalizeFirstLetter
         />

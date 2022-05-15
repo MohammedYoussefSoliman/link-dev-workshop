@@ -2,11 +2,11 @@ import React from "react";
 import { ThemeProvider } from "@emotion/react";
 import theme from "theme";
 import { Flex } from "components/Wrappers";
-import { IconButton } from "components/Buttons";
-import { TimesIcon } from "assets/svgs";
-import Logo from "../Logo";
-import Actions from "../Actions";
-import Wrapper, { MenuWrapper } from "../styles";
+import Aside from "components/Aside";
+import MenuHeader from "./MenuHeader";
+import MenuList from "./MenuList";
+import MenuFooter from "./MenuFooter";
+import { MenuWrapper } from "../styles";
 
 type ModalContentProps = {
   onClose: () => void;
@@ -15,24 +15,23 @@ type ModalContentProps = {
 export default function ModalContent({ onClose }: ModalContentProps) {
   return (
     <ThemeProvider theme={theme}>
-      <MenuWrapper>
-        <Wrapper>
-          <Flex align="center" justify="flex-end" fullHeight fullWidth>
-            <Logo />
-            <Flex className="header--actions" flex={1}>
-              ui settings
+      <MenuWrapper direction="column">
+        <MenuHeader onClose={onClose} />
+        <Flex className="body" fullWidth>
+          <Aside className="body--aside" />
+          <Flex
+            direction="column"
+            className="body--content"
+            flex={1}
+            fullHeight
+            fullWidth
+          >
+            <Flex flex={1} fullWidth className="body--content__list">
+              <MenuList onClose={onClose} />
             </Flex>
-            <Actions />
-            <Flex align="center" justify="center" className="header--menu">
-              <IconButton
-                color={theme.colors.white}
-                onClick={onClose}
-                Icon={TimesIcon}
-                size="lg"
-              />
-            </Flex>
+            <MenuFooter onClose={onClose} />
           </Flex>
-        </Wrapper>
+        </Flex>
       </MenuWrapper>
     </ThemeProvider>
   );

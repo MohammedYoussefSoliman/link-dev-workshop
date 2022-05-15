@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import Axios, { AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
+import Axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
 const api = Axios.create({ baseURL: process.env.REACT_APP_API_BASE_URL });
 
@@ -13,13 +13,13 @@ type IApiConfig = {
   params?: {
     [key: string]: IJSONParsable | Array<IJSONParsable>;
   };
-  callBack?: (data: any) => void;
+  caller?: (callData?: any) => Promise<any>;
 };
 
-type IProps = <T>(config: IApiConfig) => {
+type IProps = (config: IApiConfig) => {
   isLoading: boolean;
   isSending: boolean;
-  data: T | any;
+  response: any;
   error: any;
   call: (callData?: any) => Promise<any>;
   status: "pending" | "success" | "error";
@@ -30,11 +30,11 @@ const useHttp: IProps = ({
   method = "GET",
   params,
   formData,
-  callBack,
+  caller,
 }) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isSending, setIsSending] = useState<boolean>(false);
-  const [data, setData] = useState<any>();
+  const [axiosResponse, setAxiosResponse] = useState<any>();
   const [error, setError] = useState<any | null>(null);
   const [status, setStatus] = useState<"pending" | "success" | "error">(
     "pending",
@@ -55,6 +55,11 @@ const useHttp: IProps = ({
       try {
         setIsSending(true);
         setIsLoading(true);
+        if (caller) {
+          response = await caller();
+          setAxiosResponse(response);
+          return response;
+        }
         switch (method) {
           case "POST":
             response = await api.post(endPoint || "", callData, requestConfig);
@@ -70,16 +75,16 @@ const useHttp: IProps = ({
             response = await api.get(endPoint || "", requestConfig);
             break;
         }
-        setData(response.data);
+        setAxiosResponse(response);
         setError(false);
         setStatus("success");
         return response;
       } catch (err) {
-        const axiosError = err as AxiosError;
+        const axiosError = err as any;
         if (axiosError) {
           setError(axiosError.response?.data.errors);
         } else {
-          setError("an unknown error occurred");
+          setError("unknownError");
           setStatus("error");
         }
       } finally {
@@ -87,7 +92,7 @@ const useHttp: IProps = ({
         setIsSending(false);
       }
     },
-    [endPoint, method, params],
+    [caller, endPoint, method, params],
   );
 
   React.useEffect(() => {
@@ -101,18 +106,10 @@ const useHttp: IProps = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [formData, method]);
 
-  React.useEffect(() => {
-    if (callBack) {
-      if (data) {
-        callBack(data);
-      }
-    }
-  }, [callBack, data]);
-
   return {
     isLoading,
     isSending,
-    data,
+    response: axiosResponse,
     error,
     call,
     status,

@@ -24,14 +24,16 @@ export default function BenefitCard({
         justify="center"
         align="center"
         className={className}
+        gap="25px"
       >
         <Icon
           color={hover ? theme.colors.primary[300] : theme.colors.white}
           size={iconSize}
         />
-        <Typography.P2
+        <Typography.Small
           className="title"
           text={title}
+          weight={400}
           color={hover ? theme.colors.primary[300] : theme.colors.white}
         />
       </StyledCard>

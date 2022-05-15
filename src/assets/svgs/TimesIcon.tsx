@@ -19,12 +19,12 @@ export default function TimesIcon({ size, color }: SVGPropsType) {
         <path
           d="M6,9.857A2.357,2.357,0,0,1,8.357,7.5h33a2.357,2.357,0,1,1,0,4.714h-33A2.357,2.357,0,0,1,6,9.857Z"
           transform="translate(1815.31 72.107) rotate(-45)"
-          fill={colors.white || color}
+          fill={color || colors.white}
         />
         <path
           d="M0,2.357A2.357,2.357,0,0,0,2.357,4.714h33a2.357,2.357,0,1,0,0-4.714h-33A2.357,2.357,0,0,0,0,2.357Z"
           transform="translate(1851.524 76.501) rotate(-135)"
-          fill={colors.white || color}
+          fill={color || colors.white}
         />
       </g>
     </svg>

@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { resolveColorStyles, mangeIconButtonSize } from "../styledMixins";
+import { resolveColorStyles } from "../styledMixins";
 import { StyledIconButtonPropsType } from "../types";
 
 const StyledIconButton = styled("button")<StyledIconButtonPropsType>`
@@ -9,7 +9,6 @@ const StyledIconButton = styled("button")<StyledIconButtonPropsType>`
   justify-content: center;
   outline: none;
   ${({ color }) => resolveColorStyles(color)};
-  ${({ size }) => mangeIconButtonSize(size || "md")};
   ${({ rounded }) =>
     rounded &&
     css`

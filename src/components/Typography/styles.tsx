@@ -38,6 +38,11 @@ const Text = styled("span")<StyledTextType>`
         text-transform: capitalize;
       }
     `};
+  ${({ textTransform }) =>
+    textTransform &&
+    css`
+      text-transform: ${textTransform};
+    `};
   ${({ truncationWidth }) =>
     truncationWidth && configureTruncation(truncationWidth)};
   ${({ startAdornment }) =>

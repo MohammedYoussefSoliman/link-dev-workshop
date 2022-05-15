@@ -1,8 +1,13 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { Flex } from "components/Wrappers";
 import devices from "theme/devices";
 
-const Wrapper = styled.div`
+type WrapperType = {
+  scrolled?: boolean;
+};
+
+const Wrapper = styled("div")<WrapperType>`
   position: fixed;
   label: app-header;
   width: 100%;
@@ -40,15 +45,56 @@ const Wrapper = styled.div`
       width: 143px;
     }
   }
+  ${({ scrolled, theme }) =>
+    scrolled &&
+    css`
+      background: ${theme.colors.primary[300]};
+      box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+    `}
 `;
 
-export const MenuWrapper = styled.div`
+export const MenuWrapper = styled(Flex)`
   label: app-menu;
   width: 100vw;
   height: 100vh;
   ${({ theme }) => css`
     background: ${theme.colors.primary[300]};
   `}
+  .body {
+    margin-top: 125px;
+    height: calc(100% - 125px);
+    &--aside {
+      height: 100%;
+    }
+    &--content {
+      &__list {
+        padding: 16px;
+        ${devices.medium} {
+          padding: 32px;
+        }
+        ${devices.large} {
+          padding: 45px;
+        }
+        .social {
+          margin-top: auto;
+        }
+      }
+      &__footer {
+        align-self: flex-end;
+        padding: 20px;
+        border-top: 1px solid ${({ theme }) => theme.colors.white};
+        ${devices.large} {
+          padding: 20px 32px;
+        }
+        ${devices.xxLarge} {
+          padding: 20px 90px;
+        }
+        .copyrights {
+          margin-left: auto;
+        }
+      }
+    }
+  }
 `;
 
 export default Wrapper;

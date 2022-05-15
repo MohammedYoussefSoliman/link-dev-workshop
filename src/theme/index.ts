@@ -48,6 +48,12 @@ const theme: ThemeType = {
       xxLarge: "18px",
       hd: "20px",
     },
+    small: {
+      xSmall: "10px",
+      xLarge: "14px",
+      xxLarge: "16px",
+      hd: "18px",
+    },
   },
   font: "segeoUI",
   colors,

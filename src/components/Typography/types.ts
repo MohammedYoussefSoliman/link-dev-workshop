@@ -25,27 +25,9 @@ export type TextElementPropsType = {
   startAdornment?: string;
   className?: string;
   endAdornment?: string;
+  textTransform?: Property.TextTransform;
   hover?: HoverType;
   as?: any;
-};
-
-export type TextPropsType = {
-  localCode: string | number;
-  fontSize?: FontSizeType;
-  fontFamily?: Property.FontFamily;
-  weight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
-  color?: Property.Color;
-  capitalizeFirstLetter?: boolean;
-  textDecoration?: Property.TextDecoration;
-  textAlign?: Property.TextAlign;
-  direction?: Property.Direction;
-  lineHeight?: Property.LineHeight;
-  truncationWidth?: Property.Width;
-  startAdornment?: string;
-  endAdornment?: string;
-  hover?: HoverType;
-  isHeader?: boolean;
-  length?: number;
 };
 
 export type StyledTextType = Omit<

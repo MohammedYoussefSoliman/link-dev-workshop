@@ -13,3 +13,6 @@ export { default as HeartIcon } from "./HeartIcon";
 export { default as ShareIcon } from "./ShareIcon";
 export { default as ChevronIcon } from "./ChevronIcon";
 export { default as TimesIcon } from "./TimesIcon";
+export { default as FacebookIcon } from "./FacebookIcon";
+export { default as YoutubeIcon } from "./YoutubeIcon";
+export { default as TwitterIcon } from "./TwitterIcon";

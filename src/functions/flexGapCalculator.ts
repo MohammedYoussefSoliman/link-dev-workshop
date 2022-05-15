@@ -8,7 +8,7 @@ const flexGapCalculator = (gap: CSS.Property.Gap, direction = "row") => {
   if (direction === "row") {
     gapStyleProperties = css`
       margin: 0 calc(${gap} / 2);
-      &:first-child: {
+      &:first-of-type: {
         &:lang(en) {
           margin-left: 0;
         }
@@ -28,10 +28,10 @@ const flexGapCalculator = (gap: CSS.Property.Gap, direction = "row") => {
   } else {
     gapStyleProperties = css`
       margin: calc(${gap} / 2) 0;
-      &:first-child: {
+      &:first-of-type: {
         margin-top: 0;
       }
-      &:last-child: {
+      &:last-of-type: {
         margin-bottom: 0;
       }
     `;

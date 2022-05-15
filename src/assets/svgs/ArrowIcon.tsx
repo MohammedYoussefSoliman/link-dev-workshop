@@ -29,7 +29,7 @@ export default function ArrowIcon({ size, color, direction }: SVGPropsType) {
             ? "translate(69.025 46.742) rotate(180)"
             : "translate(-1.125 -8.534)"
         }
-        fill={colors.primary[300] || color}
+        fill={color || colors.primary[300]}
       />
     </svg>
   );

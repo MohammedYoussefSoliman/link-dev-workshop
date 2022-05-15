@@ -23,7 +23,7 @@ export default function ChevronIcon({ size, color }: SVGPropsType) {
       <path
         d="M25.5,46a.5.5,0,0,1-.353-.146l-5-5a.5.5,0,0,1,.707-.707L25.5,44.793l4.646-4.646a.5.5,0,1,1,.707.707l-5,5A.5.5,0,0,1,25.5,46Z"
         transform="translate(-20 -40)"
-        fill={colors.white || color}
+        fill={color || colors.white}
       />
     </svg>
   );

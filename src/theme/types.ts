@@ -9,13 +9,7 @@ export type ResponsiveSettings = {
 };
 
 type FontSizes = {
-  h1: ResponsiveSettings;
-  h2: ResponsiveSettings;
-  h3: ResponsiveSettings;
-  h4: ResponsiveSettings;
-  h5: ResponsiveSettings;
-  p1: ResponsiveSettings;
-  p2: ResponsiveSettings;
+  [key: string]: ResponsiveSettings;
 };
 
 type ColorType = {

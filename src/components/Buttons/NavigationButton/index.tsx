@@ -1,4 +1,5 @@
 import React from "react";
+import tinycolor from "tinycolor2";
 import { useTheme } from "@emotion/react";
 import { ArrowIcon } from "assets/svgs";
 import { NavigationButtonPropsType } from "../types";
@@ -10,6 +11,9 @@ export default React.forwardRef<HTMLButtonElement, NavigationButtonPropsType>(
       direction = "left",
       rounded,
       withBorder,
+      iconColor,
+      iconSize,
+      disabled,
       ...rest
     }: NavigationButtonPropsType,
     ref,
@@ -22,12 +26,17 @@ export default React.forwardRef<HTMLButtonElement, NavigationButtonPropsType>(
         color={theme.colors.primary[300]}
         rounded
         withBorder
+        disabled={disabled}
         {...rest}
       >
         <ArrowIcon
-          color={theme.colors.primary[300]}
+          color={
+            disabled
+              ? tinycolor(iconColor).greyscale().toString()
+              : iconColor || theme.colors.primary[300]
+          }
           direction={direction}
-          size={13}
+          size={iconSize || 13}
         />
       </StyledButton>
     );

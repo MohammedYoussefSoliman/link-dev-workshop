@@ -99,6 +99,19 @@ const p2 = (Props: TextElementPropsType) => {
     <TextElement as="p" fontSize={fontSizes} weight={fontWeight} {...Props} />
   );
 };
+const small = (Props: TextElementPropsType) => {
+  const fontSizes = theme.fontSizes.small;
+  const fontWeight = 300;
+
+  return (
+    <TextElement
+      as="small"
+      fontSize={fontSizes}
+      weight={fontWeight}
+      {...Props}
+    />
+  );
+};
 
 Typography.H1 = h1;
 Typography.H2 = h2;
@@ -107,3 +120,4 @@ Typography.H4 = h4;
 Typography.H5 = h5;
 Typography.P1 = p1;
 Typography.P2 = p2;
+Typography.Small = small;
