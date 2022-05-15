@@ -1,4 +1,5 @@
 import React from "react";
+import ErrorBoundary from "components/ErrorBoundary";
 import { useHTTP } from "app/hooks";
 import Wrapper from "./styles";
 import HeroSection from "./HeroSection";
@@ -9,17 +10,19 @@ export default function Home() {
     const response = await Promise.all([getHomeBanner(), getHomeNews()]);
     return structureHomeData(response);
   }, []);
-  const { response, isLoading } = useHTTP({ caller: getHomeData });
+  const { response, error, isLoading } = useHTTP({ caller: getHomeData });
 
   if (isLoading) return null;
 
   return (
-    <Wrapper>
-      <HeroSection
-        slides={response.slides}
-        invest={response.invest}
-        sectors={response.sectors}
-      />
-    </Wrapper>
+    <ErrorBoundary error={Boolean(error)}>
+      <Wrapper>
+        <HeroSection
+          slides={response.slides}
+          invest={response.invest}
+          sectors={response.sectors}
+        />
+      </Wrapper>
+    </ErrorBoundary>
   );
 }

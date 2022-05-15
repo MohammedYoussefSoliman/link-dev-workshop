@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -13,5 +14,5 @@ export default function ErrorBoundary({ children, error }: ErrorBoundaryProps) {
     if (error) navigate("/error");
   }, [error, navigate]);
 
-  return children;
+  return <>{children}</>;
 }
